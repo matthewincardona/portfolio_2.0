@@ -1,0 +1,234 @@
+/* 
+======================== CSS RESET ======================== 
+*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* 
+======================== END ======================== 
+*/
+
+:root {
+  --bg-light: #373737;
+  --bg-dark: #232831;
+  --bg-extra-dark: #1a1d24;
+  --clickable: #00b7f1;
+  --focused: #f47825;
+}
+
+body {
+  background-color: #333333;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 30px;
+  color: white;
+}
+
+/* hide cursor using either a blank image or cursor: none */
+.hide-cursor {
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjbQg61aAAAADUlEQVQYV2P4//8/IwAI/QL/+TZZdwAAAABJRU5ErkJggg=="),
+    none;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+.main-container > div {
+  margin: 20px;
+}
+
+#connectionContainer {
+  width: 60vw;
+  max-width: 500px;
+  background-color: var(--bg-dark);
+  padding: 20px 20px;
+  padding-top: 50px;
+  border-bottom: var(--bg-extra-dark) 30px solid;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.remote-video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#remoteVideo {
+  /* Make video to at least 100% wide and tall */
+  width: 100%;
+}
+
+#remoteIdInput {
+  margin-top: 5%;
+  padding: 10px 20px;
+  max-width: 200px;
+}
+
+.flip-horizontal {
+  transform: scale(1, 1) !important; /* reverse video flip */
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#startCallBtn {
+  border: var(--clickable) solid 2px;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.15s ease-out;
+  background-color: #ffffff00;
+  margin-top: auto;
+  min-width: 35%;
+  margin-left: auto;
+  text-align: left;
+  padding-left: 25px;
+}
+
+#startCallBtn:hover {
+  background-color: #ffffff10;
+}
+
+#startCallBtn__caret {
+  margin-left: 15px;
+  position: absolute;
+  transform: translate(0px, -1px);
+  transition: 0.25s ease-in-out transform;
+}
+
+#startCallBtn:hover #startCallBtn__caret {
+  transform: translate(5px, -1px);
+}
+
+#feedback-btn {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  background: none;
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 1000px;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  background-color: var(--clickable);
+  height: 50px;
+  width: 50px;
+  box-shadow: 5px 11px 19px rgba(0, 0, 0, 0.3);
+  border: solid #bdbdbd00 1.2px;
+}
+
+#feedback-btn::after {
+  content: "Feedback";
+  position: absolute;
+  top: 60px;
+  left: -22px;
+  background-color: #1a1d2450;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+#feedback-btn:hover {
+  border: solid #bdbdbd 1.2px;
+  transform: translateY(-4px);
+  box-shadow: 5px 11px 19px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-btn__icon {
+  width: 32px;
+}
